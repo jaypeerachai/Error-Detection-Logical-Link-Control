@@ -1,3 +1,3 @@
 # Error-Detection-Logical-Link-Control
- Created by Jay
+ Created by Jay \n
  ITCS 323 Computer Data Communication
