@@ -18,7 +18,7 @@ public class ParityCheck
         System.out.println();
         
         System.out.println("DECODE");
-        System.out.print("Decode: ");
+        System.out.print("Received Codeword: ");
         String code = sc.nextLine();
         decode(code,codeWord);
     }
@@ -47,13 +47,14 @@ public class ParityCheck
     
     public static void decode(String code, String codeWord)
     {
+        System.out.println();
         if(code.equals(codeWord))
         {
-            System.out.println("The codeword isn't in error");
+            System.out.println("***The codeword isn't in error");
         }
         else 
         {
-            System.out.println("The codeword is in error");
+            System.out.println("***The codeword is in error");
         }
     }
 }

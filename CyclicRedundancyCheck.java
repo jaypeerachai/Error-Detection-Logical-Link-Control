@@ -21,7 +21,7 @@ public class CyclicRedundancyCheck
         System.out.println();
         
         System.out.println("DECODE");
-        System.out.print("Decode: ");
+        System.out.print("Received Codeword: ");
         data = sc.nextLine();
         DataWord code = new DataWord(data);
         decode(code,divisor);
@@ -107,11 +107,11 @@ public class CyclicRedundancyCheck
         System.out.println();
         if(check == true)
         {
-            System.out.println("The codeword isn't in error");
+            System.out.println("***The codeword isn't in error");
         }
         else 
         {
-            System.out.println("The codeword is in error");
+            System.out.println("***The codeword is in error");
         }
     }
 }
