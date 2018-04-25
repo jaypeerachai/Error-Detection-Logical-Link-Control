@@ -1,3 +1,8 @@
+/**
+ * Dataword Class
+ * Created by Peerachai Banyongrakkul Sec.1 5988070
+ * DataWord.java
+ */
 public class DataWord 
 {
     private final String data;

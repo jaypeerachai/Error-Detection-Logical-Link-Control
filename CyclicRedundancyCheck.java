@@ -1,3 +1,8 @@
+/**
+ * Write a computer program that encode a dataword into a codeword and decode a codeword to determine whether the codeword is in error for cyclic redundancy check code.
+ * Created by Peerachai Banyongrakkul Sec.1 5988070
+ * CyclicRedundancyCheck.java
+ */
 import java.util.Scanner;
 public class CyclicRedundancyCheck 
 {
@@ -26,7 +31,7 @@ public class CyclicRedundancyCheck
     public static String encode(DataWord dataWord, String divisor, int check)
     {
         String code = dataWord.getData();
-        // check whether it is encode or decode
+        // check whether it is encoding or decoding
         if(check == 0)
         {
             while(code.length() < (dataWord.getLength() + divisor.length() - 1))
@@ -73,7 +78,6 @@ public class CyclicRedundancyCheck
             //System.out.println(dvs);
             result = remain;
             remain = "";
-            //System.out.println(result.length() + "  " + divisor.length() + " " + temp);
             for(int i = 0 ; i < divisor.length() ; i++)
             {
                 if(result.charAt(i) == dvs.charAt(i))
