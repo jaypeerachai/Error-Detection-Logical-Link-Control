@@ -1,6 +1,7 @@
 /**
  * 
- * 
+ * Created by Peerachai Banyongrakkul Sec.1 5988070
+ * HammingCode.java
  */
 import java.util.*;
 public class HammingCode 
@@ -31,7 +32,7 @@ public class HammingCode
         System.out.print("Recieved codeword: ");
         for(int i = 0; i< a.length ; i++)
         {
-            System.out.println("");
+            //System.out.println("");
         }
     }
     
@@ -43,13 +44,13 @@ public class HammingCode
             dataword[n-i-1] = Character.getNumericValue(dataWord.getData().charAt(i));
         }
         
-        int a[];
-        int i=0, parity_count=0,j=0,k=0;
+        int codeword[];
+        int i=0, parityCount=0,j=0,k=0;
         while(i<dataword.length)
         {
-            if(Math.pow(2, parity_count) == i+parity_count + 1)
+            if(Math.pow(2, parityCount) == i+parityCount + 1)
             {
-                parity_count++;
+                parityCount++;
             }
             else
             {
@@ -57,24 +58,26 @@ public class HammingCode
             }
         }
         
-        a = new int[dataword.length + parity_count];
-        for(i = 1 ; i<=a.length ; i++)
+        codeword = new int[dataword.length + parityCount];
+        i = 1;
+        while(i<=codeword.length)
         {
             if(Math.pow(2, j) == i)
             {
-                a[i-1] = 2;
+                codeword[i-1] = 2;
                 j++;
             }
             else
             {
-                a[k+j] = dataword[k++];
+                codeword[k+j] = dataword[k++];
             }
+            i++;
         }
-        for(i = 0; i<parity_count ; i++)
+        for(i = 0; i<parityCount ; i++)
         {
-            a[((int) Math.pow(2,i)) - 1] = getParity(a,i);
+            codeword[((int) Math.pow(2,i)) - 1] = getParity(codeword,i);
         }
-        return a;
+        return codeword;
     }
     
     public static int getParity(int b[], int power)
