@@ -1,3 +1,8 @@
+/**
+ * 6. Write a computer program that encode a dataword into a codeword and decode a codeword to determine whether the codeword is in error for checksum.
+ * Created by Peerachai Banyongrakkul Sec.1 5988070
+ * CheckSum.java
+ */
 import java.util.Scanner;
 public class CheckSum 
 {

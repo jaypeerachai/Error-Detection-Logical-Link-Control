@@ -1,5 +1,5 @@
 /**
- * Write a computer program that encode a dataword into a codeword and decode a codeword to determine whether the codeword is in error for cyclic redundancy check code.
+ * 5. Write a computer program that encode a dataword into a codeword and decode a codeword to determine whether the codeword is in error for cyclic redundancy check code.
  * Created by Peerachai Banyongrakkul Sec.1 5988070
  * CyclicRedundancyCheck.java
  */
