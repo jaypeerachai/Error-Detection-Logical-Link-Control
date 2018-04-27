@@ -216,10 +216,12 @@ public class CheckSum
         System.out.println();
         if(Integer.parseInt(checkSum) == 0)
         {
+            System.out.println("Syndrome: 0");
             System.out.println("***The codeword isn't in error");
         }
         else
         {
+            System.out.println("Syndrome: non-zero");
             System.out.println("***The codeword is in error");
         }
     }
