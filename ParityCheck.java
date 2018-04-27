@@ -24,6 +24,11 @@ public class ParityCheck
         decode(code,codeWord);
     }
     
+    /**
+     * 
+     * @param d
+     * @return 
+     */
     public static String encode(DataWord d)
     {
         String codeword = d.getData();
