@@ -29,7 +29,7 @@ public class HammingCode
 	}
         System.out.println();
         
-        System.out.print("Recieved codeword: ");
+        System.out.print("Received codeword: ");
         for(int i = 0; i< a.length ; i++)
         {
             //System.out.println("");

@@ -10,6 +10,7 @@ public class twoDParityCheck
 {
     public static void main(String[]args)
     {
+        System.out.println("---------- 2D Parity Check----------");
         Scanner sc = new Scanner(System.in);
         System.out.print("Input number of block: ");
         int n = sc.nextInt();
@@ -30,10 +31,15 @@ public class twoDParityCheck
             }
             count++;
         }
-        encode(data);
+        String codeWord = encode(data);
+        
+        System.out.println();
+        System.out.print("Received codeword: ");
+        String ReCodeWord = sc.nextLine();
+        checkError(codeWord,ReCodeWord);
     }
     
-    public static void encode(String[] dataWord)
+    public static String encode(String[] dataWord)
     {
         int count = 0;
         char rRowBit[] = new char[dataWord.length];
@@ -54,7 +60,7 @@ public class twoDParityCheck
             dataWord[count] += rRowBit[count];
             count++;
         }
-        System.out.print("Row partities: ");
+        System.out.print("Row parities: ");
         for(int i = 0 ; i<rRowBit.length ; i++)
         {
             System.out.print(rRowBit[i]);
@@ -81,7 +87,7 @@ public class twoDParityCheck
             }
             count++;
         }
-        System.out.print("Column partities: ");
+        System.out.print("Column parities: ");
         for(int i = 0 ; i<rColBit.length ; i++)
         {
             ColBit += rColBit[i];
@@ -109,6 +115,11 @@ public class twoDParityCheck
             System.out.print(code[i] + " ");
             codeWord += code[i];
         }
-        
+        return codeWord;
+    }
+    
+    public static boolean checkError(String codeWord, String ReCodeWord)
+    {
+        return true;
     }
 }
