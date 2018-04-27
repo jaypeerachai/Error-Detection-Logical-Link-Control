@@ -106,7 +106,7 @@ public class twoDParityCheck
             }
             else
             {
-                code[i] = dataWord[i];
+                code[i] = dataWord[i]; 
             }
         }
         System.out.print("Codeword: ");

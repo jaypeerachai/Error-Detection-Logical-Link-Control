@@ -40,7 +40,7 @@ public class ParityCheck
             {
                 rBit = '0';
             }
-            else
+            else 
             {
                 rBit = '1';
             }
@@ -54,7 +54,22 @@ public class ParityCheck
     public static void decode(String code, String codeWord)
     {
         System.out.println();
-        if(code.equals(codeWord))
+        String cw = codeWord.substring(0, codeWord.length()-2);
+        char r = codeWord.charAt(codeWord.length()-1);
+        char rBit = cw.charAt(0);
+        for(int i = 1 ; i < cw.length(); i++)
+        {
+            //System.out.print(d.getData().charAt(i));
+            if(rBit == cw.charAt(i))
+            {
+                rBit = '0';
+            }
+            else 
+            {
+                rBit = '1';
+            }
+        }
+        if(rBit == r)
         {
             System.out.println("***The codeword isn't in error");
         }

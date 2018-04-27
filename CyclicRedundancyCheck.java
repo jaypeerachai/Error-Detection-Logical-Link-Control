@@ -103,9 +103,9 @@ public class CyclicRedundancyCheck
     {
         String remainder = encode(dataWord,divisor,1);
         //System.out.println(remainder);
-        boolean check = Integer.parseInt(remainder) == 0;
+        boolean syndrome = Integer.parseInt(remainder) == 0;
         System.out.println();
-        if(check == true)
+        if(syndrome == true)
         {
             System.out.println("***The codeword isn't in error");
         }
