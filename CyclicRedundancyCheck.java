@@ -93,8 +93,15 @@ public class CyclicRedundancyCheck
         String codeWord;
         String remainder = remain.substring(1, remain.length());
         codeWord = dataWord.getData() + remainder;
-        System.out.println("Remainder: " + remainder);
-        System.out.println("Codeword: "+codeWord);
+        if(check == 0)
+        {
+            System.out.println("Remainder: " + remainder);
+            System.out.println("Codeword: "+codeWord);
+        }
+        else
+        {
+            System.out.println("Remainder: " + remainder);
+        }
         return remainder;
     }
     
@@ -104,13 +111,16 @@ public class CyclicRedundancyCheck
         String remainder = encode(dataWord,divisor,1);
         //System.out.println(remainder);
         boolean syndrome = Integer.parseInt(remainder) == 0;
-        System.out.println();
         if(syndrome == true)
         {
+            System.out.println("Syndrome: 0");
+            System.out.println();
             System.out.println("***The codeword isn't in error");
         }
         else 
         {
+            System.out.println("Symdrome: non-zero");
+            System.out.println();
             System.out.println("***The codeword is in error");
         }
     }
