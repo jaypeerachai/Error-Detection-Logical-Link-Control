@@ -26,6 +26,8 @@ public class ParityChunk
             }
             count++;
         }
+        
+        /*PACKET CREATION AT SENDER*/
         String[][] chunk = new String[4][5];
         char[][] rBit = new char[4][4];
         for(int i=0;i<4;i++)
@@ -84,7 +86,6 @@ public class ParityChunk
                         char rbit = rBit[c][0];
                         for(int l = 1 ; l<4 ; l++)
                         {
-                            //System.out.println("rbit = " + rbit + "rBit = " + rBit[c][l]);
                             if(rbit == rBit[c][l])
                             {
                                 rbit = '0';
@@ -95,7 +96,6 @@ public class ParityChunk
                             }
                         } 
                         temp += rbit;
-                        //System.out.println();
                         c++;
                     }
                     chunk[i][j] = temp;
@@ -104,10 +104,8 @@ public class ParityChunk
                     {
                         for(int b=0;b<4;b++)
                         {
-                            //System.out.print(rBit[a][b]);
                             rBit[a][b]=0;
                         }
-                        //System.out.println("");
                     }
                 }
             }
@@ -125,16 +123,9 @@ public class ParityChunk
             }
             System.out.println();
         }
+        /*END PACKET CREATION AT SENDER*/
         
-//        String[][] newChunk = new String[chunk[0].length][chunk.length];
-//        for(int x = 0; x < chunk[0].length; x++)
-//        {
-//            for(int y = 0; y < chunk.length; y++)
-//            {
-//                newChunk[x][y] = chunk[y][x];
-//            }
-//        }
-        
+        /*PACKETS SENT*/
         System.out.println();
         System.out.println("PACKETS SENT");
         for(int i = 0; i< 5 ; i++)
@@ -151,10 +142,12 @@ public class ParityChunk
             }
             System.out.print(" ");
         }
+        /*END PACKETS SENT*/
         
+        /*PACKETS RECEIVED & ERROR CORRECTION*/
         System.out.println();
         System.out.println();
-        System.out.println("PACKETS RECEIVED (Suppose there is 4-bit burst error in packet 5 chunk 4)");
+        System.out.println("PACKETS RECEIVED & ERROR CORRECTION (Suppose there is 4-bit burst error in packet 5 chunk 4)");
         
         String newBit ="";
         for(int i = 0 ; i < 4 ; i++)
@@ -223,6 +216,9 @@ public class ParityChunk
         }
         System.out.println("Correct packet 5 chunk 4 from " + chunk[3][0] + " to " + correctBit);
         chunk[3][0] = correctBit;
+        /*END PACKETS RECEIVED & ERROR CORRECTION*/
+        
+        /*PACKET RECREATION AT RECEIVER*/
         System.out.println();
         System.out.println("PACKET RECREATION AT RECEIVER");
         System.out.println("\t|chunk 1|chunk 2|chunk 3|chunk 4|r-bit|");
@@ -235,6 +231,7 @@ public class ParityChunk
             }
             System.out.println();
         }
+        /*END PACKET RECREATION AT RECEIVER*/
         
     }
     
