@@ -1,0 +1,35 @@
+run:
+----------Parity check code with chunk interleaving----------
+input 1 16-bit packet: 1100111100001100
+input 2 16-bit packet: 0101010101010100
+input 3 16-bit packet: 1111111101010100
+input 4 16-bit packet: 1100001111110000
+
+PACKET CREATION AT SENDER
+	|chunk 1|chunk 2|chunk 3|chunk 4|r-bit|
+Packet 1 | 1100 | 1111 | 0000 | 1100 | 1111 | 
+Packet 2 | 0101 | 0101 | 0101 | 0100 | 0001 | 
+Packet 3 | 1111 | 1111 | 0101 | 0100 | 0001 | 
+Packet 4 | 1100 | 0011 | 1111 | 0000 | 0000 | 
+
+PACKETS SENT
+	 Pactket 5			 Pactket 4			 Pactket 3			 Pactket 2			 Pactket 1		
+| 1100 | 1111 | 0101 | 1100 |  | 0011 | 1111 | 0101 | 1111 |  | 1111 | 0101 | 0101 | 0000 |  | 0000 | 0100 | 0100 | 1100 |  | 0000 | 0001 | 0001 | 1111 |  
+
+PACKETS RECEIVED (Suppose there is 4-bit burst error in packet 5 chunk 4)
+1100 is changed to 0011
+	 Pactket 5			 Pactket 4			 Pactket 3			 Pactket 2			 Pactket 1		
+| 0011 | 1111 | 0101 | 1100 |  | 0011 | 1111 | 0101 | 1111 |  | 1111 | 0101 | 0101 | 0000 |  | 0000 | 0100 | 0100 | 1100 |  | 0000 | 0001 | 0001 | 1111 |  
+Correct digit of packet 5 chunk 4 from 0 to 1
+Correct digit of packet 5 chunk 4 from 0 to 1
+Correct digit of packet 5 chunk 4 from 1 to 0
+Correct digit of packet 5 chunk 4 from 1 to 0
+Correct packet 5 chunk 4 from 0011 to 1100
+
+PACKET RECREATION AT RECEIVER
+	|chunk 1|chunk 2|chunk 3|chunk 4|r-bit|
+Packet 1 | 1100 | 1111 | 0000 | 1100 | 1111 | 
+Packet 2 | 0101 | 0101 | 0101 | 0100 | 0001 | 
+Packet 3 | 1111 | 1111 | 0101 | 0100 | 0001 | 
+Packet 4 | 1100 | 0011 | 1111 | 0000 | 0000 | 
+BUILD SUCCESSFUL (total time: 15 seconds)

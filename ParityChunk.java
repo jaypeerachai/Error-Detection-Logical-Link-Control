@@ -232,8 +232,5 @@ public class ParityChunk
             System.out.println();
         }
         /*END PACKET RECREATION AT RECEIVER*/
-        
     }
-    
-    
 }
